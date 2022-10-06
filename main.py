@@ -1,0 +1,22 @@
+print('Введите рост: ')
+height = float(input())
+print('Введите вес: ')
+weight = float(input())
+print('Введите количество шагов: ')
+numberstep = float(input())
+print('Время активности: ')
+timeactive = float(input())
+steplength = float((height / 4) + 0.37)
+distance = round(float((steplength/100) * numberstep), 3)
+print('Дистанция = ' + str(distance) + ' м.')
+speed = float(distance / timeactive)
+calories = round(float(0.035 * weight + (speed**2 / height) * 0.029 * weight), 2)
+print('Количество калорий: ' + str(calories))
+km_distance = round(float(distance/1000), 3)
+print('Дистанция = ' + str(km_distance) + ' км.')
+if (km_distance < 2):
+    print('Ну такооооое...')
+if (km_distance > 2 and km_distance < 4):
+    print('Среднячок!')
+if (km_distance > 4):
+    print('СПОРТСМЕН!!!')
